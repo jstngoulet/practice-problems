@@ -4,7 +4,7 @@
 //
 //  Created by Justin Goulet on 3/25/25.
 //
-import Foundataion
+import Foundation
 
 class LargestSubstring: NSObject {
     
@@ -38,7 +38,8 @@ class LargestSubstring: NSObject {
     }
     
     func performTests() {
-        let testCases: [(input: String, expected: Int)] = [
+        typealias TestCase = (input: String, expected: Int)
+        let testCases: [TestCase] = [
             ("abcabcbb", 3),    // "abc"
             ("bbbbb", 1),       // "b"
             ("pwwkew", 3),      // "wke"
@@ -63,35 +64,54 @@ class LargestSubstring: NSObject {
             ("123123412341234", 4) // "1234"
         ]
         
-        for test in testCases {
-            let result = lengthOfLongestSubstring(test.input)
-            let isPassing = result == test.expected
-            print("Input: \"\(test.input)\" -> Output: \(result) | Expected: \(test.expected) | Pass: \(isPassing ? "✅" : "❌")")
+        // 🔍 Run test cases
+        let colWidths = [8, (testCases.map { Array($0.input).description.count }.max() ?? 0), 10, 10, 8]  // Adjust column widths dynamically
+        
+        func formatRow(_ values: [String]) -> String {
+            return zip(values, colWidths).map { $0.padding(toLength: $1, withPad: " ", startingAt: 0) }.joined(separator: "| ")
         }
         
+        let header = formatRow(["Test #", "Input", "Expected", "Output", "Result"])
+        let separator = String(repeating: "-", count: header.count)
+        
+        print(separator)
+        print(header)
+        print(separator)
+        
+        for (index, testCase) in testCases.enumerated() {
+            let output = lengthOfLongestSubstring(testCase.input)
+            let passed = output == testCase.expected ? "✅" : "❌"
+            
+            let inputStr = testCase.input.map { "\($0)" }.joined(separator: ", ")
+            let row = formatRow(["\(index + 1)", "[\(inputStr)]", "\(testCase.expected)", "\(output)", passed])
+            
+            print(row)
+        }
+        
+        print(separator)
     }
     
-    func lengthOfLongestSubstring(_ str: String) -> Int {
+    func lengthOfLongestSubstring(_ s: String) -> Int {
         
-        var startPointer: Int = 0
-        var endPointer: Int = 0
-        var seenCharacters: Set<Character> = []
-        var maxLength: Int = 0
-        var characters = Array(str)
+        let sArray: [Character] = Array(s)
+        var leftPointer: Int = 0
+        var rightPointer: Int = 0
+        var currentSet: Set<Character> = []
+        var currentMax: Int = 0
         
-        while endPointer < characters.count {
-            let currentChar = characters[endPointer]
+        while rightPointer < s.count {
+            let currentChar = sArray[rightPointer]
             
-            while seenCharacters.contains(currentChar) {
-                seenCharacters.remove(characters[startPointer])
-                startPointer += 1
+            while currentSet.contains(currentChar) {
+                currentSet.remove(sArray[leftPointer])
+                leftPointer += 1
             }
             
-            seenCharacters.insert(currentChar)
-            maxLength = max(maxLength, seenCharacters.count)
-            endPointer += 1
+            currentSet.insert(currentChar)
+            currentMax = max(currentSet.count, currentMax)
+            rightPointer += 1
         }
         
-        return maxLength
+        return currentMax
     }
 }

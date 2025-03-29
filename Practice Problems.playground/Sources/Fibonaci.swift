@@ -47,22 +47,22 @@ class Fibonaci {
      For n = 0, return 0. For n = 1, return 1.
      */
     
-    override init() {
-        super.init()
-        
-        print(fibonacci(0))
-        // Output: 0
-        
-        print(fibonacci(1))
-        // Output: 1
-        
-        print(fibonacci(5))
-        // Output: 5
-        
-        print(fibonacci(10))
-        // Output: 55
-        
-    }
+//    override init() {
+//        super.init()
+//        
+//        print(fibonacci(0))
+//        // Output: 0
+//        
+//        print(fibonacci(1))
+//        // Output: 1
+//        
+//        print(fibonacci(5))
+//        // Output: 5
+//        
+//        print(fibonacci(10))
+//        // Output: 55
+//        
+//    }
     
     func fibonacci(_ n: Int) -> Int {
         var fibNumbers: [Int] = [0, 1]

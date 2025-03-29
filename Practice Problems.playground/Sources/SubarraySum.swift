@@ -116,7 +116,7 @@ class SubarraySum: NSObject {
                 sumsFound += previousReports
             }
             
-            sumPrefixxes[currentSum, default: 0] += 1
+            sumPrefixes[currentSum, default: 0] += 1
         }
         
         return sumsFound

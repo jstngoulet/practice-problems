@@ -5,63 +5,85 @@ class DriverApplication: NSObject {
     override init() { super.init(); performTests() }
     
     /**
-     Problem: Find the Minimum Window Substring
-     Description
+     Kaitenzushi
      
-     Given two strings, s and t, find the smallest substring in s that contains all the characters of t (including duplicates). If no such substring exists, return an empty string "".
+     There are N dishes in a row on a serving belt, with the ith dish being of type Di
      
-     Constraints
+     You're very hungry, but youd also like to keep things interesting. The N dishes will
+     arrive in front of you, one after the other, and for each one, you'll eat it as long as
+     it is not hte same type of any of the previous K dishes you've eaten. You eat very
+     fast, so you can consume  dish before hte next one gets to you. Any dishes
+     you choose not to eat will pass as they will be eaten by others.
      
-     0 ≤ s.length ≤ 10^5
-     0 ≤ t.length ≤ 10^5
-     s and t consist of uppercase and lowercase English letters.
-     Examples
+     DEtermine how many dishes you will end up eating
      
-     | Input                               |  Output |     Explanation   |
-     | ----------------------------------- | ------- | ----------------- |
-     | s = "ADOBECODEBANC", t = "ABC"      |  "BANC" |  The substring "BANC" is the smallest window containing "A", "B", and "C". |
-     | s = "a", t = "a"                    |  "a"    |  The only substring is "a", which contains "a". |
-     | s = "a", t = "aa"                   |  ""     |  The string s does not have two "a" characters. |
-     | s = "abc", t = "bc"                 |  "bc"   |  The substring "bc" contains all characters from "t". |
-     
-     Function Signature
-     ```swift
-     func minWindow(_ s: String, _ t: String) -> String
-     ```
-     
-     Hints
-     Use the Sliding Window approach with two pointers (left and right).
-     Maintain a frequency count of characters in t and track if the window is valid.
-     Expand the window by moving the right pointer, and contract it by moving the left pointer when all required characters are inside.
-     Keep track of the minimum window found.
-
      */
-    
     func performTests() {
-        let testCases: [(s: String, t: String, expected: String)] = [
-            ("ADOBECODEBANC", "ABC", "BANC"),
-            ("a", "a", "a"),
-            ("a", "aa", ""),
-            ("abc", "bc", "bc"),
-            ("aa", "aa", "aa"),
-            ("aaflslflsldkalskaaa", "aaa", "aaa"),
-            ("abcd", "xyz", ""),
-            ("ab", "b", "b"),
-            ("ab", "a", "a"),
-            ("abcdefgh", "hgf", "fgh"),
-            ("abacabadabacaba", "abc", "bac"),
-            ("aaabbaac", "abc", "baac")
+        typealias TestCase = (N: Int, D: [Int], K: Int, expected: Int)
+        let tests: [TestCase] = [
+            (6, [1, 2, 3, 3, 2, 1], 1, 5),
+            (6, [1, 2, 3, 3, 2, 1], 2, 4),
+//            (7, [1, 2, 1, 2, 1, 2, 1], 2, 2)
         ]
         
-        for (index, testCase) in testCases.enumerated() {
-            let output = minWindow(testCase.s, testCase.t)
-            let passed = output == testCase.expected
-            print("Test \(index + 1): Input: (\(testCase.s), \(testCase.t)) -> Output: \(output) | Expected: \(testCase.expected) | Pass: \(passed ? "✅" : "❌")")
+        for (iter, test) in tests.enumerated() {
+            let result = getMaximumEatenDishCount(test.N, test.D, test.K)
+            let isPassed = result == test.expected
+            print("Test \(iter + 1): \(isPassed)")
         }
     }
     
-    func minWindow(_ s: String, _ t: String) -> String {
-        return t
+    func getMaximumEatenDishCount(_ N: Int, _ D: [Int], _ K: Int) -> Int {
+        guard !D.isEmpty && N == D.count else { return 0 }
+        
+        //  Dish by indexes
+        var dishesConsumed: [(id: Int, index: Int)] = []
+        
+        //  Nwo that we have a mapping of each dish and when it is eaten.
+        for iter in 0..<N {
+            let consumedHistory = dishesConsumed[max(0, iter-K)...]
+            let nextDish = D[iter]
+            
+            print("Consumed Array: \(dishesConsumed) :: \(consumedHistory)")
+            
+            if nextDish == consumedHistory.last?.id {
+                continue
+            }
+            
+            if iter < K {
+                print("Adding by default at: \(iter)")
+                dishesConsumed.append((D[iter], iter))
+            } else if let lastIndex = consumedHistory.lastIndex(where: { $0.id == nextDish }) {
+                print("Recent eat:\(lastIndex)")
+            }
+            
+            print("Count: \(dishesConsumed.count)")
+           
+        }
+        print("Consumed: \(dishesConsumed)")
+        return dishesConsumed.count
+        
+//        guard !D.isEmpty || N != D.count else { return 0 }
+//        
+//        var dishesEaten: Int = 1
+//        var lastDishEaten: Int = D[0]
+//        var dishesPassed: Int = 0
+//        
+//        for iter in 1..<N {
+//            let nextDish = D[iter]
+//            let previouslyEated = D[max(0, iter-K-dishesPassed)..<iter]
+//            
+//            if !previouslyEated.contains(nextDish) && lastDishEaten != nextDish {
+//                lastDishEaten = nextDish
+//                dishesEaten += 1
+//                dishesPassed = 0
+//            } else {
+//                dishesPassed += 1
+//            }
+//            
+//        }
+//        
+//        return dishesEaten
     }
 }
 
