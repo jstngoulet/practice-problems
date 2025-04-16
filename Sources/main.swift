@@ -8,7 +8,7 @@ let problems: [ProblemExec] = [
     (BoggleSolver(), false),
     (ClockAngles(), false),
     (CurrencyConverter(), false),
-    (AddDigitsUntilOne(), true),
+    (AddDigitsUntilOne(), false),
     (DetermineIfPalindrome(), false),
     (DetermineIfCrosswordGrid(), false),
     (DeflatedDisks(), false),
@@ -28,6 +28,7 @@ let problems: [ProblemExec] = [
     (RotaryLock2(), false),
     (Sorting(), false),
     (SubarraySumEqualsK(), false),
+    (SpiralOrderMatrix(), true),
     (TowerOfHanoi(), false),
     (ValidParentheses(), false),
     (WordLadder(), false)
