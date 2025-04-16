@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:Practicw-Problems}",
+            "name": "Debug Practicw-Problems",
+            "program": "${workspaceFolder:Practicw-Problems}/.build/debug/Practicw-Problems",
+            "preLaunchTask": "swift: Build Debug Practicw-Problems"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:Practicw-Problems}",
+            "name": "Release Practicw-Problems",
+            "program": "${workspaceFolder:Practicw-Problems}/.build/release/Practicw-Problems",
+            "preLaunchTask": "swift: Build Release Practicw-Problems"
+        }
+    ]
+}

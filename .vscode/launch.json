@@ -1,0 +1,40 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:Practice-Problems}/Practicw-Problems",
+            "name": "Debug Practicw-Problems (Practicw-Problems)",
+            "program": "${workspaceFolder:Practice-Problems}/Practicw-Problems/.build/debug/Practicw-Problems",
+            "preLaunchTask": "swift: Build Debug Practicw-Problems (Practicw-Problems)"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:Practice-Problems}/Practicw-Problems",
+            "name": "Release Practicw-Problems (Practicw-Problems)",
+            "program": "${workspaceFolder:Practice-Problems}/Practicw-Problems/.build/release/Practicw-Problems",
+            "preLaunchTask": "swift: Build Release Practicw-Problems (Practicw-Problems)"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:Practice-Problems}",
+            "name": "Debug Practice-Problems",
+            "program": "${workspaceFolder:Practice-Problems}/.build/debug/Practice-Problems",
+            "preLaunchTask": "swift: Build Debug Practice-Problems"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:Practice-Problems}",
+            "name": "Release Practice-Problems",
+            "program": "${workspaceFolder:Practice-Problems}/.build/release/Practice-Problems",
+            "preLaunchTask": "swift: Build Release Practice-Problems"
+        }
+    ]
+}
