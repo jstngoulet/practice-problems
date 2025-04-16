@@ -4,15 +4,15 @@
 typealias ProblemExec = (problem: Problem, enabled: Bool)
 
 let problems: [ProblemExec] = [
+    (AddDigitsUntilOne(), false),
     (AnagramInspector(), false),
     (BoggleSolver(), false),
     (ClockAngles(), false),
-    (ContainsDuplicate(), true),
+    (ContainsDuplicate(), false),
     (CurrencyConverter(), false),
-    (AddDigitsUntilOne(), false),
-    (DetermineIfPalindrome(), false),
-    (DetermineIfCrosswordGrid(), false),
     (DeflatedDisks(), false),
+    (DetermineIfCrosswordGrid(), false),
+    (DetermineIfPalindrome(), false),
     (FactorialCalculation(), false),
     (FirstNonRepeatingString(), false),
     (FirstUniqueCharacter(), false),
@@ -28,12 +28,14 @@ let problems: [ProblemExec] = [
     (RotaryLock(), false),
     (RotaryLock2(), false),
     (Sorting(), false),
-    (SubarraySumEqualsK(), false),
     (SpiralOrderMatrix(), false),
+    (SubarraySumEqualsK(), false),
+    (SubarraySumZero(), true),
     (TowerOfHanoi(), false),
     (ValidParentheses(), false),
     (WordLadder(), false)
 ]
+
 
 problems
     .filter({ $0.enabled })
