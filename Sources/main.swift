@@ -16,7 +16,7 @@ let problems: [ProblemExec] = [
     (FirstUniqueCharacter(), false),
     (GroupAnagrams(), false),
     (IntersetingLinkedLists(), false),
-    (LongestConsecutiveSequence(), true),
+    (LongestConsecutiveSequence(), false),
     (LongestSubstring(), false),
     (lowestCommonAncestor(), false),
     (MaxSubarraySum(), false),
@@ -28,6 +28,7 @@ let problems: [ProblemExec] = [
     (Sorting(), false),
     (SubarraySumEqualsK(), false),
     (TowerOfHanoi(), false),
+    (ValidParentheses(), true),
     (WordLadder(), false)
 ]
 
