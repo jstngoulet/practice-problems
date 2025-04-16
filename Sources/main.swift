@@ -10,6 +10,7 @@ let problems: [ProblemExec] = [
     (ClockAngles(), false),
     (ContainsDuplicate(), false),
     (CurrencyConverter(), false),
+    (DailyTemperatures(), true),
     (DeflatedDisks(), false),
     (DetermineIfCrosswordGrid(), false),
     (DetermineIfPalindrome(), false),
@@ -30,7 +31,7 @@ let problems: [ProblemExec] = [
     (Sorting(), false),
     (SpiralOrderMatrix(), false),
     (SubarraySumEqualsK(), false),
-    (SubarraySumZero(), true),
+    (SubarraySumZero(), false),
     (TowerOfHanoi(), false),
     (ValidParentheses(), false),
     (WordLadder(), false)
