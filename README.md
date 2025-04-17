@@ -1,5 +1,10 @@
 # **Technical Programming Interview Study Guide**
 
+> If you would like to create your own sample problems, paste this template into your GPT chatline: 
+```md
+Using the prompt at the provided link, create a new practice problem for me: https://raw.githubusercontent.com/jstngoulet/practice-problems/refs/heads/main/GPTPrompt.md
+```
+
 ## 📚 **1. Data Structures**
 
 Data structures form the backbone of most coding interview problems. Below are some common data structures you should understand thoroughly:
