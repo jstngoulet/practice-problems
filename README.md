@@ -5,6 +5,15 @@
 Using the prompt at the provided link, create a new practice problem for me: https://raw.githubusercontent.com/jstngoulet/practice-problems/refs/heads/main/GPTPrompt.md
 ```
 
+To run project in VSCode: 
+```bash
+cd practice-problems
+```
+
+```bash
+clear && swift run
+```
+
 ## 📚 **1. Data Structures**
 
 Data structures form the backbone of most coding interview problems. Below are some common data structures you should understand thoroughly:

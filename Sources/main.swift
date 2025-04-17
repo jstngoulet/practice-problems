@@ -28,13 +28,14 @@ let problems: [ProblemExec] = [
     (MiddleOfLinkedList(), false),
     (RotaryLock(), false),
     (RotaryLock2(), false),
-    (SingleNumber(), true),
+    (SingleNumber(), false),
     (Sorting(), false),
     (SpiralOrderMatrix(), false),
     (SubarraySumEqualsK(), false),
     (SubarraySumZero(), false),
     (TowerOfHanoi(), false),
     (ValidParentheses(), false),
+    (WaterFlowPathProblem(), true),
     (WordLadder(), false)
 ]
 

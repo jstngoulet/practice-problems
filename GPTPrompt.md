@@ -21,6 +21,7 @@ Each generated challenge must include:
 3. **Swift File Output**  
    - Define a Swift class named appropriately, inheriting from `Problem`.  
    - Include:
+     - The class should be documented fully - the class defintion and functions show have correctly formatted comments
      - A `performTests()` function that runs all test cases.
      - A stub function that solves the problem, but leave its body **empty** unless asked to implement it.
 
