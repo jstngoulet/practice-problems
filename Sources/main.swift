@@ -21,6 +21,7 @@ let problems: [ProblemExec] = [
     (IntersetingLinkedLists(), false),
     (LongestConsecutiveSequence(), false),
     (LongestSubstring(), false),
+    (LongestSubstringWithKDistinct(), true),
     (lowestCommonAncestor(), false),
     (MaxSubarraySum(), false),
     (Merge2Arrays(), false),
@@ -35,7 +36,7 @@ let problems: [ProblemExec] = [
     (SubarraySumZero(), false),
     (TowerOfHanoi(), false),
     (ValidParentheses(), false),
-    (WaterFlowPathProblem(), true),
+    (WaterFlowPathProblem(), false),
     (WordLadder(), false)
 ]
 
