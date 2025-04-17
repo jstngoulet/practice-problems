@@ -5,6 +5,7 @@ typealias ProblemExec = (problem: Problem, enabled: Bool)
 
 let problems: [ProblemExec] = [
     (AddDigitsUntilOne(), false),
+    (AddDecimalStrings(), true),
     (AnagramInspector(), false),
     (BoggleSolver(), false),
     (ClockAngles(), false),
@@ -28,7 +29,7 @@ let problems: [ProblemExec] = [
     (Merge2Arrays(), false),
     (Merge2Lists(), false),
     (MiddleOfLinkedList(), false),
-    (MinimumWindowSubstring(), true),
+    (MinimumWindowSubstring(), false),
     (RotaryLock(), false),
     (RotaryLock2(), false),
     (SingleNumber(), false),
