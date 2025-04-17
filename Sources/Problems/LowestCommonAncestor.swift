@@ -83,7 +83,7 @@ p = 2, q = 4
 */
 import Foundation
 
-class lowestCommonAncestor: Problem {
+class LowestCommonAncestor: Problem {
     
     class TreeNode<T: Comparable>: NSObject {
         var val: T 
