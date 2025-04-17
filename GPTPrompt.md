@@ -111,7 +111,3 @@ class ExampleProblem: Problem {
 // Checks if the function correctly handles an empty array.
 (input: [], expected: 0)
 ```
-
----
-
-This format ensures consistency and quality in every problem generated.
