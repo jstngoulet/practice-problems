@@ -21,6 +21,7 @@ let problems: [ProblemExec] = [
     (GroupAnagrams(), false),
     (IntersetingLinkedLists(), false),
     (LongestConsecutiveSequence(), false),
+    (LongestEqualZeroOneSubarray(), false),
     (LongestRepeatingCharacterReplacement(), false),
     (LongestSubstring(), false),
     (LongestSubstringWithKDistinct(), false),
@@ -39,7 +40,7 @@ let problems: [ProblemExec] = [
     (SubarraySumEqualsK(), false),
     (SubarraySumZero(), false),
     (TowerOfHanoi(), false),
-    (TwoSumIndices(), true),
+    (TwoSumIndices(), false),
     (ValidParentheses(), false),
     (WaterFlowPathProblem(), false),
     (WordLadder(), false)
