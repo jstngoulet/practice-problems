@@ -21,6 +21,7 @@ let problems: [ProblemExec] = [
     (GroupAnagrams(), false),
     (IntersetingLinkedLists(), false),
     (LongestConsecutiveSequence(), false),
+    (LongestRepeatingCharacterReplacement(), true),
     (LongestSubstring(), false),
     (LongestSubstringWithKDistinct(), false),
     (LongestSubstringWithoutRepeats(), false),
