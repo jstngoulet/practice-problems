@@ -46,6 +46,7 @@ final class LongestSubstringWithoutRepeats: Problem {
                 workingSet.remove(leftChar)
                 leftIterator += 1
             }
+            
             workingSet.insert(currentChar)
             longestSubstringLength = max(longestSubstringLength, workingSet.count)
             
