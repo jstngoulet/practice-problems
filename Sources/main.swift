@@ -27,6 +27,7 @@ let problems: [ProblemExec] = [
     (LongestSubstringWithKDistinct(), false),
     (LongestSubstringWithoutRepeats(), false),
     (LowestCommonAncestor(), false),
+    (MaximalRectangle(), true),
     (MaxSubarraySum(), false),
     (Merge2Arrays(), false),
     (Merge2Lists(), false),

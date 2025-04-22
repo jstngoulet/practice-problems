@@ -88,12 +88,18 @@ class TwoSumIndices: Problem {
 	*/
 	func twoSum(_ nums: [Int], _ target: Int) -> (Int, Int) {
         /**
-            Walkthrough: 
+            Walkthrough: (Brute Force)
             1, 2, 3, 4, 5 -> 7
             
             1. 1 + 2    != 7
             2. 1 + 3    != 7
             3. 1 + 4    != 7
+            
+            Walkthrough: (Dict): 
+            For every number
+                Check to see the difference needed
+                If the difference needed exists, return the index
+                If not found, save and move on
             
         */
         if nums.count < 2 { return (-1, -1) }
