@@ -20,7 +20,7 @@ let problems: [ProblemExec] = [
     (FirstUniqueCharacter(), false),
     (GroupAnagrams(), false),
     (IntersetingLinkedLists(), false),
-    (LazyBartender(), true),
+    (LazyBartender(), false),
     (LongestConsecutiveSequence(), false),
     (LongestEqualZeroOneSubarray(), false),
     (LongestRepeatingCharacterReplacement(), false),
@@ -46,6 +46,7 @@ let problems: [ProblemExec] = [
     (TowerOfHanoi(), false),
     (TwoSumIndices(), false),
     (ValidParentheses(), false),
+    (ValidParentheses2(), true),
     (WaterFlowPathProblem(), false),
     (WordLadder(), false)
 ]
