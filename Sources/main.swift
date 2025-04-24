@@ -28,6 +28,7 @@ let problems: [ProblemExec] = [
     (LongestSubstring(), false),
     (LongestSubstringWithKDistinct(), false),
     (LongestSubstringWithoutRepeats(), false),
+    (LongestSubstringWithoutRepeats2(), true),
     (LowestCommonAncestor(), false),
     (MaximalRectangle(), false),
     (MaxSubarraySum(), false),
@@ -46,7 +47,7 @@ let problems: [ProblemExec] = [
     (TowerOfHanoi(), false),
     (TwoSumIndices(), false),
     (ValidParentheses(), false),
-    (ValidParentheses2(), true),
+    (ValidParentheses2(), false),
     (WaterFlowPathProblem(), false),
     (WordLadder(), false)
 ]
