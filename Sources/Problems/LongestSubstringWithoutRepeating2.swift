@@ -27,36 +27,48 @@ class LongestSubstringWithoutRepeats2: Problem {
     func lengthOfLongestSubstring(_ s: String) -> Int {
         /**
             Walkthrough:
-            Given the string, `abcabcbb`, we need to determine the largest substring without duplicate letters
-            1. We need to go through the string, using a window, to help solve this. 
-            
-            Pointer 1           Pointer 2           Current String      isValid     Max
-            ---------           ---------           --------------      -------     ---
-            0                   0                   a                   t           1
-            0                   1                   ab                  t           2
-            0                   2                   abc                 t           3
-            0                   3                   abca                f           3       - Move pointer 1
-            1                   3                    bca                t           3
-            1                   4                    bcab               f           3       - Move pointer 1
-            2                   4                     cab               t           3       
-            2                   5                     cabc              f           3       - Move pointer 1
-            3                   6                      abcb             f           3       - Move pointer 1
-            4                   5                       bcb             f           3       - Move pointer 1
-            5                   5                        cb                   
+            Given the string `"abcabcbb"`, we want to find the **length** of the longest substring without repeating characters.
         
-            What we need: 
-            - Start and End pointers
-            - Something to keep track of the current string
-            - Something to keep track of the current max length
-            - 2 loops (nested) that adjust the window
-            
-            Steps: 
-            1. Start at 0, 0. if the current character is not in the set, add it and move iter
-            2. Move. If the character is in the set, move the other iter and keep removing until the string is valid
-            3. After the string is valid, update the max
-            4. When all letters are considered, return the max
-            
+            We'll use a **sliding window** approach with two pointers — `start` and `end` — to define the current valid window of unique characters.
+        
+            Here's how it plays out:
+        
+            Start     End     Current Window   Unique?   Max Length   Action
+            -----     ---     --------------   -------   -----------  -------------------------
+            0         0       "a"              ✅         1            Add 'a' to set
+            0         1       "ab"             ✅         2            Add 'b'
+            0         2       "abc"            ✅         3            Add 'c'
+            0         3       "abca"           ❌         3            'a' is duplicate → move start
+            1         3       "bca"            ✅         3            Remove 'a', add 'a'
+            1         4       "bcab"           ❌         3            'b' is duplicate → move start
+            2         4       "cab"            ✅         3            Remove 'b', add 'b'
+            2         5       "cabc"           ❌         3            'c' is duplicate → move start
+            3         5       "abc"            ✅         3            Remove 'c', add 'c'
+            3         6       "abcb"           ❌         3            'b' is duplicate → move start
+            4         6       "bcb"            ❌         3            'a' removed, 'b' still duplicate
+            5         6       "cb"             ✅         3            Now valid again
+            5         7       "cbb"            ❌         3            'b' duplicate again
+            6         7       "b"              ✅         3            Only 'b'
+        
+            Final Max Length: 3
+        
+            ------------------------------------------------------------
+        
+            What we need:
+            - Two pointers to define the window (`start` and `end`)
+            - A Set to track current characters in the window
+            - An `Int` to track the max length seen so far
+        
+            Steps:
+            1. Initialize an empty Set, `start = 0`, `end = 0`, and `maxLength = 0`
+            2. Loop with `end` over the characters in the string
+                a. If `s[end]` is not in the set: insert it, update `maxLength`
+                b. If `s[end]` **is** in the set: remove `s[start]` and increment `start` until `s[end]` is no longer in the set
+            3. After finishing the loop, return `maxLength`
+        
+            This runs in O(n) time, since each character is visited at most twice (once by `end`, once by `start`)
         */
+
         var startIter: Int = 0, endIter: Int = 0
         let sArray: [Character] = Array(s)    //  For indexing operations
         var currentMax: Int = 0
@@ -72,6 +84,7 @@ class LongestSubstringWithoutRepeats2: Problem {
                 currentSet.remove(startChar)
                 startIter += 1
             }
+            
             currentSet.insert(currentChar)
             currentMax = max(currentMax, endIter - startIter + 1)
             endIter += 1
