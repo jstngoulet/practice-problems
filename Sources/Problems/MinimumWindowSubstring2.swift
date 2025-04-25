@@ -73,7 +73,7 @@ class MinimumWindowSubstring2: Problem {
             shownDict[currentChar, default: 0] += 1
             
             while isValidWindow(freq: tLetterRequirements, in: shownDict)
-            && leftIter <= rightIter {
+                && leftIter <= rightIter {
                 
                 let windowLength = rightIter - leftIter + 1
                 if windowLength < currentMin {

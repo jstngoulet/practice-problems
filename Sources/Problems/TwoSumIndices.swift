@@ -104,14 +104,6 @@ class TwoSumIndices: Problem {
         */
         if nums.count < 2 { return (-1, -1) }
         
-        // for leftIter in 0..<nums.count-1 {
-        //     for rightIter in leftIter+1..<nums.count {    //  Start after 1
-        //         if nums[leftIter] + nums[rightIter] == target {
-        //             return (leftIter, rightIter)
-        //         }
-        //     }
-        // }
-        
         var numMatch: [Int: Int] = [:]
         
         for (lIter, num) in nums.enumerated() {

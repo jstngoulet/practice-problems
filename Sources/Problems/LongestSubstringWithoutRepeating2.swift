@@ -85,6 +85,7 @@ class LongestSubstringWithoutRepeats2: Problem {
                 startIter += 1
             }
             
+            //  Add after it doesnt exist
             currentSet.insert(currentChar)
             currentMax = max(currentMax, endIter - startIter + 1)
             endIter += 1
